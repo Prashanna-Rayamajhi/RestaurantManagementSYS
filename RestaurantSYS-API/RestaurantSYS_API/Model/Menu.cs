@@ -19,6 +19,7 @@ public class Menu{
 
     public DateTime? Validity {get; set;}
     [Required]
+    [RegularExpression(@"^\$\d+(?:\.\d{1,2})?\s*-\s*\$\d+(?:\.\d{1,2})?$", ErrorMessage ="Price Range must be in format of $1.00-$2.99")]
     public string PriceRange {get; set;}
 
     public List<MenuDish> MenuDishes {get; set;}

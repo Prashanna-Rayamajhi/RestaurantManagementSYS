@@ -5,10 +5,10 @@ public class RestaurantContext : DbContext {
     {
         
     }
-    DbSet<Menu> Menus {get; set;}
-    DbSet<Dish> Dishes {get; set;}
+    public DbSet<Menu> Menus {get; set;}
+    public DbSet<Dish> Dishes {get; set;}
 
-    DbSet<MenuDish> MenuDishes {get; set;}
+    public DbSet<MenuDish> MenuDishes {get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
