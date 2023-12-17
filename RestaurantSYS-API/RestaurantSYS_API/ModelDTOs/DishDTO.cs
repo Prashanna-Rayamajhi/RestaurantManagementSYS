@@ -21,6 +21,6 @@ public class DishDTO{
     [Required(ErrorMessage ="Price is a required field")]
     public decimal Price{get; set;}
 
-    public List<MenuDishDTO> MenuDishes { get; set; }
+    public List<MenuDTO> Menus { get; set; }
     
 }

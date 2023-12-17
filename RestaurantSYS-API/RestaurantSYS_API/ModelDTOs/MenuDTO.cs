@@ -23,5 +23,5 @@ public class MenuDTO
     [RegularExpression(@"^\$\d+(?:\.\d{1,2})?\s*-\s*\$\d+(?:\.\d{1,2})?$", ErrorMessage = "Price Range must be in format of $1.00-$2.99")]
     public string PriceRange { get; set; }
 
-    public List<MenuDishDTO> MenuDishes { get; set; }
+    public List<DishDTO> Dishes { get; set; }
 }
