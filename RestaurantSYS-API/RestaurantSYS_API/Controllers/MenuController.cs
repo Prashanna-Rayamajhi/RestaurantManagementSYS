@@ -15,7 +15,10 @@ public class MenuController : ControllerBase{
     //working with Http Actions
     [HttpGet]
     public async Task<ActionResult<List<MenuDTO>>> GetMenus(){
-        var menus = await _context.Menus.ToListAsync();
+        var menus = await _context.Menus
+        .Include(m => m.MenuDishes)
+        .ThenInclude(m => m.Dish)
+        .ToListAsync();
 
         var menuDTO = _mapper.Map<List<MenuDTO>>(menus);
 

@@ -36,7 +36,8 @@ public class AutoMapperProfile : Profile{
                     Description = dish.Dish.Description,
                     Category = dish.Dish.Category,
                     Price = dish.Dish.Price,
-                    ImageURL = dish.Dish.ImageURL
+                    ImageURL = dish.Dish.ImageURL,
+                    Ingredients = dish.Dish.Ingredients
                 });
             }
         }

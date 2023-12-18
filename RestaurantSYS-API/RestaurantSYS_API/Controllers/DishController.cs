@@ -14,12 +14,13 @@ public class DishController: ControllerBase{
     //Http Actions
     [HttpGet]
     public async Task<ActionResult<List<DishDTO>>> GetDishes(){
-        var dish = await _context.Dishes
+        var dish = await _context.Dishes.Include(d => d.MenuDishes).ThenInclude(d => d.Menu)
         .ToListAsync();
 
         var dishDTO = _mapper.Map<List<DishDTO>>(dish);
 
         return Ok(dishDTO);
     }
+   
 
 }
