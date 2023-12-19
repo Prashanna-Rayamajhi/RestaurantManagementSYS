@@ -23,6 +23,37 @@ public class MenuController : ControllerBase{
         var menuDTO = _mapper.Map<List<MenuDTO>>(menus);
 
         return Ok(menuDTO);
-
     }
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<MenuDTO>> GetMenuByID(int id){
+        try{
+            var menu = await _context.Menus
+            .Include(m => m.MenuDishes)
+            .ThenInclude(m => m.Dish)
+            .FirstOrDefaultAsync(m => m.ID == id);
+
+        
+
+            var menuDTO = _mapper.Map<MenuDTO>(menu);
+
+            return Ok(menuDTO);
+        }
+        catch(Exception ex){
+            return BadRequest(ex.Message);
+        }
+        
+    }
+    //Http Action to add new menu to the db
+    [HttpPost]
+    public async Task<ActionResult> AddMenu([FromBody] Menu menu){
+        try{
+             _context.Add(menu);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }catch(Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+    
 }
