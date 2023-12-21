@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HomeModule } from './Body/home.module';
 
 import { NavbarComponent } from './Header/navbar/navbar.component';
+import { MenuModule } from './Body/menus/menu.module';
 
 
 
@@ -14,6 +15,7 @@ import { NavbarComponent } from './Header/navbar/navbar.component';
               CommonModule,
               RouterOutlet, 
               HomeModule,
+              MenuModule,
               NavbarComponent
             ],
   templateUrl: './app.component.html',

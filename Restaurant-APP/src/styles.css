@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto+Slab:wght@100;300;400;600&display=swap');
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  
+
+body{
+    background-color: #f1dabf;
+    letter-spacing: 2px;
+    color: #04030f;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 300;
+}
 

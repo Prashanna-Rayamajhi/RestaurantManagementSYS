@@ -1,0 +1,10 @@
+.back-ground{
+    background-image: url("../../../assets/Images/Hero-image.jpg");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: auto;
+    height: 95vh;
+}
+.container-def{
+    max-width: 560px;
+}
