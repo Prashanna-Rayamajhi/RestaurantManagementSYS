@@ -1,3 +1,5 @@
+import { Dish } from "./dish.model";
+
 export interface Menu{
     id: number,
     name: string,
@@ -6,5 +8,7 @@ export interface Menu{
     imageUrl: string,
     availability: boolean,
     validityPeriod: boolean | null,
-    priceRange: string
+    priceRange: string,
+    icon: string | null,
+    dishes: Dish[];
 }

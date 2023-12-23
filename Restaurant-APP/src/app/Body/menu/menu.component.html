@@ -1,0 +1,43 @@
+<div class="flex justify-around mt-12 items-center w-[72%] h-[100%] ml-[auto] mr-[auto]">
+    <div class="w-[auto] h-[100%]">
+        <img class="h-[350px] w-[450px]" src="{{menuModel.imageUrl}}" alt="Image" />
+    </div>
+    <div class="w-[50%] h-[350px] flex flex-col space-y-7 p-2 justify-around">
+        <h3 class="text-3xl text-[500] text-center mt-1">{{menuModel.name}}</h3>
+        <div class="text-base text-[200]">
+            {{menuModel.description}}
+            
+        </div>
+        <div class="text-lg text-[300]">
+            {{menuModel.priceRange}}   
+        </div>
+        <div>
+            <button class="border-2 p-2 border-[#362417] bg-[#362417] text-[#fffbff]  transition-colors ease  hover:bg-transparent hover:text-[#362417] ">Explore Dishes</button>
+        </div>
+        <div class="flex items-center space-x-7">
+            <div class=" text-center">
+                <i class="fa-solid fa-martini-glass-citrus text-3xl text-[#362417]"></i>
+                <p>Food and Drinks</p>
+            </div>
+            <div class=" text-center">
+                <i class="fa-solid fa-bowl-food text-3xl text-[#362417]"></i>
+                <p>Quality Food</p>
+            </div>
+            <div class=" text-center">
+                <i class="fa-solid fa-ranking-star text-3xl text-[#362417]"></i>
+                <p>Hospitality</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- div bleow will be created as next component as we move further ahead -->
+<!--  the div will display top 3 dishes associated with the menu -->
+<div class="bg-[#362417] mt-12 pt-4">
+    <h2 class="text-center text-[#fffbff] text-[500] text-2xl">Top Dishes</h2>
+    <div class="flex justify-center mt-12 h-[75vh] w-[100%]  space-x-4 pl-4 pr-4  pb-1">
+        <div *ngFor="let dish of menuModel.dishes">
+            <app-dish [dishModel]="dish"></app-dish>
+        </div>
+    </div>
+</div>
+

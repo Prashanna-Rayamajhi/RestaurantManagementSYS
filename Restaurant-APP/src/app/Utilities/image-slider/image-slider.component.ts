@@ -28,4 +28,8 @@ export class ImageSliderComponent implements OnInit {
       this.currentImageLoaded = this.sliderModel[nextIndex]; 
     }, 5000)
   }
+
+  navClick(){
+    console.log("clicked");
+  }
 }

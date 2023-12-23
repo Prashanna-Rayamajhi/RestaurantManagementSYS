@@ -1,0 +1,13 @@
+.line-section{
+    position: relative;
+}
+.line-section::after{
+    position: absolute;
+    content: " ";
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(to right, #f1dabf, #362417, #f1dabf);
+    top: 0;
+    left: 31%;
+    transform: translate(0, 9rem);
+}
