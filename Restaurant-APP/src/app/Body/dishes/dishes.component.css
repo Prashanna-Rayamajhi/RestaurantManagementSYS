@@ -1,0 +1,7 @@
+.hero-img{
+    width: 100%;
+    background-image: url('../../../assets/Images/dish-hero.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 18%;
+}

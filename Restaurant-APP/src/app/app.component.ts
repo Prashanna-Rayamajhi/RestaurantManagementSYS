@@ -5,6 +5,7 @@ import { HomeModule } from './Body/home.module';
 
 import { NavbarComponent } from './Header/navbar/navbar.component';
 import { MenuModule } from './Body/menus/menu.module';
+import { DishesModule } from './Body/dishes/dishes.module';
 
 
 
@@ -16,7 +17,8 @@ import { MenuModule } from './Body/menus/menu.module';
               RouterOutlet, 
               HomeModule,
               MenuModule,
-              NavbarComponent
+              NavbarComponent,
+              DishesModule
             ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
