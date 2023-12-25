@@ -2,22 +2,35 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace RestaurantSYS_API.Migrations.Initial
+namespace RestaurantSYS_API.Migrations.Initialc
 {
     [DbContext(typeof(RestaurantContext))]
-    [Migration("20231215044011_Initial")]
-    partial class Initial
+    partial class RestaurantContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
+
+            modelBuilder.Entity("Category", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("Dish", b =>
                 {
@@ -25,10 +38,8 @@ namespace RestaurantSYS_API.Migrations.Initial
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -53,6 +64,8 @@ namespace RestaurantSYS_API.Migrations.Initial
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("CategoryID");
 
                     b.ToTable("Dishes");
                 });
@@ -112,6 +125,17 @@ namespace RestaurantSYS_API.Migrations.Initial
                     b.ToTable("MenuDishes");
                 });
 
+            modelBuilder.Entity("Dish", b =>
+                {
+                    b.HasOne("Category", "Category")
+                        .WithMany("Dishes")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("MenuDish", b =>
                 {
                     b.HasOne("Dish", "Dish")
@@ -129,6 +153,11 @@ namespace RestaurantSYS_API.Migrations.Initial
                     b.Navigation("Dish");
 
                     b.Navigation("Menu");
+                });
+
+            modelBuilder.Entity("Category", b =>
+                {
+                    b.Navigation("Dishes");
                 });
 
             modelBuilder.Entity("Dish", b =>

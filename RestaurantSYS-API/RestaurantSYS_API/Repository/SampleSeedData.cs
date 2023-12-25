@@ -28,10 +28,18 @@ public class SampleSeedData{
             _context.AddRange(menus);
             _context.SaveChanges();
         }
+        if(!_context.Categories.Any()){
+            string[] categoriesNames = {"Starter", "Main Dish", "Drinks" ,"Desserts", "Special"};
+            List<Category> categories = new List<Category>();
+            foreach(var cat in categoriesNames){
+                categories.Add(new Category {Name = cat});
+            }
+            _context.Categories.AddRange(categories);
+            _context.SaveChanges();
+        }
         if(!_context.Dishes.Any()){
             string[] dishesName = {"Spaghetti Bolognese", "Cesar Salad", "Grilled Salmon", "Margherita Pizza", "Chicken Alferdo", "Vegetable Stir-Fry", "Tiramisu", "Beef Burger", "Penne Arrabbiata", "Sushi Platter"};
             string[] description = {"Classic Italian pasta dish", "Fresh salad with Caesar dressing", "Grilled salmon fillet with lemon butter", "Traditional Italian pizza", "Creamy pasta with grilled chicken", "Stir-fried vegetables with soy sauce", "Classic Italian dessert", "Juicy beef patty with lettuce and cheese", "Spicy tomato based pasta dish","Assorted sushi selection"};
-            string[] category = {"Main Food", "Salad", "Seafood", "Pizza", "Main Course", "Vegetarian", "Dessert", "Burger", "Main Course", "Sea food"};
             string[] ingredients = {"Pasta, Ground Beef, Tomato Sauce, Parmesan", "Romaine Lettuce, Croutons, Parmesan, Dressing", "Salmon, Lemon, Butter, Herbs", "Dough, Tomato Sauce, Mozzarella, Basil", "Fettucine, Grilled Chicken, Alfredo Sauce, Parmesan", "Broccoli, Bell Peppers, Carrots, Soy Sauce", "LadyFingers, Espresso, Mascarpone, Cocoa Powder", "Beef Patty, Lettuce, Tomato, Cheddar Cheese", "Penne Pasta, Spicy Tomato Sauce, Garlic, Red Pepper Flakes", "Rice, Salmon, Tuna, Nori, Soy Sauce, Wasabi"};
             decimal[] prices = {10.99M, 8.49M, 16.99M, 12.50M, 14.99M, 9.99M, 7.50M, 11.49M, 12.99M, 18.75M};
             string[] images = {
@@ -46,12 +54,14 @@ public class SampleSeedData{
                 "https://images.pexels.com/photos/5419344/pexels-photo-5419344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                 "https://images.pexels.com/photos/10488749/pexels-photo-10488749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             };
+            Random random = new Random();
             List<Dish> dishes = new List<Dish>();
             for(int i = 0; i < dishesName.Length; i++){
+                
                 dishes.Add(new Dish{
                     Name = dishesName[i],
                     Description = description[i],
-                    Category = category[i],
+                    CategoryID = random.Next(1, _context.Categories.Count()),
                     Ingredients = ingredients[i],
                     Price = prices[i],
                     ImageURL = images[i],

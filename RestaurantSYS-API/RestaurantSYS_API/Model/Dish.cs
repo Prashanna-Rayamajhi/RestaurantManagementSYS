@@ -11,15 +11,15 @@ public class Dish{
     [Required(ErrorMessage ="Image is required field")]
     public string ImageURL { get; set; }
 
-    [Required(ErrorMessage = "Category field is required")]
-    [StringLength(40, ErrorMessage ="Error can only be 40 characters long")]
-    public string Category { get; set; }
-
     [Required(ErrorMessage = "Ingredeints is required field")]
     [StringLength(100, ErrorMessage ="Ingredinets can be upto 100 characters long")]
     public string  Ingredients { get; set; }
     [Required(ErrorMessage ="Price is a required field")]
     public decimal Price{get; set;}
+
+    public int CategoryID {get; set;}
+
+    public Category Category { get; set; }
 
     public List<MenuDish> MenuDishes { get; set; }
     

@@ -3,30 +3,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace RestaurantSYS_API.Migrations.Initial
+namespace RestaurantSYS_API.Migrations.Initialc
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class RestaunrantContext : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Dishes",
+                name: "Categories",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
-                    ImageURL = table.Column<string>(type: "TEXT", nullable: false),
-                    Category = table.Column<string>(type: "TEXT", maxLength: 40, nullable: false),
-                    Ingredients = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Price = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", maxLength: 40, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Dishes", x => x.ID);
+                    table.PrimaryKey("PK_Categories", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -46,6 +41,30 @@ namespace RestaurantSYS_API.Migrations.Initial
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Menus", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Dishes",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    ImageURL = table.Column<string>(type: "TEXT", nullable: false),
+                    Ingredients = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    CategoryID = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Dishes", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Dishes_Categories_CategoryID",
+                        column: x => x.CategoryID,
+                        principalTable: "Categories",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -73,6 +92,11 @@ namespace RestaurantSYS_API.Migrations.Initial
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Dishes_CategoryID",
+                table: "Dishes",
+                column: "CategoryID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MenuDishes_MenuID",
                 table: "MenuDishes",
                 column: "MenuID");
@@ -89,6 +113,9 @@ namespace RestaurantSYS_API.Migrations.Initial
 
             migrationBuilder.DropTable(
                 name: "Menus");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
         }
     }
 }

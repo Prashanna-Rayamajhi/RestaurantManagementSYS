@@ -34,7 +34,6 @@ public class AutoMapperProfile : Profile{
                     ID = dish.Dish.ID,
                     Name = dish.Dish.Name,
                     Description = dish.Dish.Description,
-                    Category = dish.Dish.Category,
                     Price = dish.Dish.Price,
                     ImageURL = dish.Dish.ImageURL,
                     Ingredients = dish.Dish.Ingredients
