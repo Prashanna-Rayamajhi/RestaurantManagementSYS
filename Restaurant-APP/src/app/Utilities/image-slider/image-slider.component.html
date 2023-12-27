@@ -1,6 +1,6 @@
 <div class="w-[100%] h-[100%] slider-container">
     <div *ngFor = "let slider of  sliderModel; let i = index"
-    class="flex justify-center items-center w-[100%] h-[100%] bg-[#362417] bg-cover bg-center bg-no-repeat bg-blend-overlay img-container" [style.opacity]="i === currentIndex ? 1 : 0 " style="background-image: url('{{currentImageLoaded.imageUrl}}');">
+    class="flex justify-center items-center w-[100%] h-[100%] bg-[#362417] bg-cover bg-center bg-no-repeat bg-blend-overlay img-container" [style.opacity]="i === currentIndex ? 1 : 0 " style="background-image: url('{{currentImageLoaded.image}}');">
         <div class="flex flex-col justify-center items-center space-y-7">
             <h2 class="text-6xl text-[#f1dabf] font-[700] text-justify py-2">{{currentImageLoaded.name}}</h2>
             <h4 class="text-md text-[#f1dabf] font-[400] text-center px-4 w-[60%]">{{currentImageLoaded.description}}</h4>

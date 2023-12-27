@@ -15,6 +15,15 @@ builder.Services.AddSingleton(provider => new MapperConfiguration(config =>
 {
     config.AddProfile(new AutoMapperProfile());
 }).CreateMapper());
+//conneting to the angular front end application
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(builders => {
+        var angularAppOrigin = builder.Configuration.GetValue<string>("AngularApplication");
+
+        builders.WithOrigins(angularAppOrigin).AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -31,6 +40,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
+
+app.UseRouting();
 
 app.UseHttpsRedirection();
 

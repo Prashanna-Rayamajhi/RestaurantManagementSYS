@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Category } from "../Models/category.model";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../environment/environment";
+import { Observable } from "rxjs";
 
 //category service is required currently in dishes page hence will be injected at dishes module file.
 @Injectable(
@@ -8,34 +11,10 @@ import { Category } from "../Models/category.model";
     }
 )
 export class CategoryService{
-    private categories: Category[] = [
-        {
-            id: 0,
-            name: "All"
-        },
-        {
-            id: 1,
-            name: "Starter",
-        },    
-        {
-            id: 2,
-            name: "Main Dish",
-        },
-        {
-            id: 3,
-            name: "Desserts",
-        },
-        {
-            id: 4,
-            name: "Drinks",
-        },
-        {
-            id: 5,
-            name: "Special",
-        }
-    ];
+    constructor(private http: HttpClient){}
+    private apiURL = environment.apiURL + "category";
 
-    public getCategories(){
-        return this.categories.slice();
+    public getCategories(): Observable<Category[]>{
+        return this.http.get<Category[]>(this.apiURL);
     }
 }

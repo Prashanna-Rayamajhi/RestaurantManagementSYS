@@ -3,6 +3,8 @@ import { HomeComponent } from "./home/home.component";
 import { CommonModule } from "@angular/common";
 import { MenuComponent } from "./menu/menu.component";
 import { DishComponent } from "./dish/dish.component";
+import { HomeService } from "../Services/home.service";
+import { MenuService } from "../Services/menu.service";
 
 
 @NgModule({
@@ -12,6 +14,7 @@ import { DishComponent } from "./dish/dish.component";
     imports: [CommonModule],
     exports: [HomeComponent, 
                MenuComponent,
-               DishComponent]
+               DishComponent],
+    providers: [HomeService, MenuService]
 })
 export class HomeModule {};

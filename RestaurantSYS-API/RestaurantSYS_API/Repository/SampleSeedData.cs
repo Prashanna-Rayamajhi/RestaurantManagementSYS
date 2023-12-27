@@ -68,21 +68,117 @@ public class SampleSeedData{
                 });
             }
             _context.AddRange(dishes);
+            _context.AddRange(
+                new Dish{
+                    Name = "Eggs Benedict",
+                    Description = "A classic breakfast dish consisting of two halves of an English muffin, each topped with Canadian bacon, a poached egg, and hollandaise sauce.",
+                    ImageURL = "https://images.pexels.com/photos/2122294/pexels-photo-2122294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 1
+                },
+                new Dish{
+                    Name = "Pancakes",
+                    Description = "Fluffy pancakes served with maple syrup, butter, and fresh berries.",
+                    ImageURL = "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 1
+                },
+                new Dish{
+                    Name = "Avocado Toast",
+                    Description = "Toasted bread topped with mashed avocado, olive oil, salt, pepper, and optional toppings like tomatoes, feta cheese, or poached eggs.",
+                    ImageURL = "https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 1
+                },
+                new Dish{
+                    Name = "Grilled Chicken Salad",
+                    Description = "A healthy salad with grilled chicken, mixed greens, cherry tomatoes, cucumber, and a vinaigrette dressing.",
+                    ImageURL = "https://images.pexels.com/photos/792027/pexels-photo-792027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 1
+                },
+                new Dish{
+                    Name = "Teriyaki Beef Stir Fry",
+                    Description = "Stir-fried beef with vegetables in a flavorful teriyaki sauce, served with steamed rice or noodles.",
+                    ImageURL = "https://images.pexels.com/photos/7474372/pexels-photo-7474372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 14.99M,
+                    CategoryID = 5
+                },
+                new Dish{
+                    Name = "Iced Coffee",
+                    Description = "Chilled coffee served over ice cubes, often with milk or cream and sweetened to taste.",
+                    ImageURL = "https://images.pexels.com/photos/19055624/pexels-photo-19055624/free-photo-of-iced-coffee-with-whipped-cream.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 3
+                },
+                new Dish{
+                    Name = "Fresh Fruit Smoothie",
+                    Description = "Blended drink made with a mix of fresh fruits, yogurt, and sometimes honey or fruit juice.",
+                    ImageURL = "https://images.pexels.com/photos/3625372/pexels-photo-3625372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 3
+                },
+                new Dish{
+                    Name = "Mint Lemonade",
+                    Description = "Refreshing drink made with freshly squeezed lemon juice, mint leaves, sugar, and cold water.",
+                    ImageURL = "https://images.pexels.com/photos/2109099/pexels-photo-2109099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 5.99M,
+                    CategoryID = 3
+                },
+                new Dish{
+                    Name = "Seafood Paella",
+                    Description = "Spanish rice dish cooked with a variety of seafood, saffron, vegetables, and flavorful spices.",
+                    ImageURL = "https://images.pexels.com/photos/12419160/pexels-photo-12419160.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 15.99M,
+                    CategoryID = 2
+                },
+                new Dish{
+                    Name = "Filet Mignon",
+                    Description = "Tender beef steak, typically grilled or pan-seared, known for its tenderness and rich flavor.",
+                    ImageURL = "https://images.pexels.com/photos/8588647/pexels-photo-8588647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 15.99M,
+                    CategoryID = 2
+                },new Dish{
+                    Name = "Vegetarian Moussaka",
+                    Description = "A Greek casserole dish made with layers of eggplant, potatoes, tomato sauce, and creamy béchamel.",
+                    ImageURL = "https://images.pexels.com/photos/7226367/pexels-photo-7226367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 18.99M,
+                    CategoryID = 5
+                },new Dish{
+                    Name = "Garlic Shrimp Skewers",
+                    Description = "Grilled shrimp skewers marinated in a garlic-infused olive oil, served with a side of zesty lemon wedges.",
+                    ImageURL = "https://images.pexels.com/photos/6270541/pexels-photo-6270541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    Ingredients = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam laboriosam libero laudantium rerum quia, at, fugit dicta est id commodi, quibusdam incidunt aperiam ratione accusamus similique quos itaque quas?",
+                    Price = 15.99M,
+                    CategoryID = 5
+                }
+            );
             _context.SaveChanges();
         }
         if(!_context.MenuDishes.Any()){
-            var menuIDs = _context.Menus.Select(menu => menu.ID).ToList();
-            var dishIDs = _context.Dishes.Select(dish => dish.ID).ToList();
+            var menuIDs = _context.Menus.Select(menu => menu.ID).ToArray();
+            var dishIDs = _context.Dishes.Select(dish => dish.ID).ToArray();
 
            Random random = new Random();
-           int numberOfEntries = 10; // Change this as needed
+           int numberOfEntries = 60; // Change this as needed
 
             HashSet<(int MenuID, int DishID)> uniqueMenuDishes = new HashSet<(int MenuID, int DishID)>();
 
             while (uniqueMenuDishes.Count < numberOfEntries)
             {
-                int randomMenuID = menuIDs[random.Next(0, menuIDs.Count)];
-                int randomDishID = dishIDs[random.Next(0, dishIDs.Count)];
+                int randomMenuID = menuIDs[random.Next(0, menuIDs.Length)];
+                int randomDishID = dishIDs[random.Next(0, dishIDs.Length)];
 
                 if (!uniqueMenuDishes.Contains((randomMenuID, randomDishID)))
                 {

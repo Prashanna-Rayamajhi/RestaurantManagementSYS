@@ -13,7 +13,7 @@
     </div>
     <div class="grid grid-cols-4 mt-[2rem] gap-[12px]">
         <div *ngFor="let dish of dishes" class="flex flex-col justify-start text-center shadow-xl bg-[#f1dabf] h-[75vh]">
-            <img [src]="dish.imageUrl" [alt]="dish.name"  class="w-[100%] h-[320px]"/>
+            <img [src]="dish.imageURL" [alt]="dish.name"  class="w-[100%] h-[320px]"/>
             <div class="h-[35%] p-2 text-[#362417] flex flex-col justify-around">
                 <h4 class="font-[500] text-lg">{{dish.name}}</h4>
                 <div>{{dish.description}}</div>

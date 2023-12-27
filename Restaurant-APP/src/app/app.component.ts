@@ -6,6 +6,7 @@ import { HomeModule } from './Body/home.module';
 import { NavbarComponent } from './Header/navbar/navbar.component';
 import { MenuModule } from './Body/menus/menu.module';
 import { DishesModule } from './Body/dishes/dishes.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +19,8 @@ import { DishesModule } from './Body/dishes/dishes.module';
               HomeModule,
               MenuModule,
               NavbarComponent,
-              DishesModule
+              DishesModule,
+              HttpClientModule
             ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

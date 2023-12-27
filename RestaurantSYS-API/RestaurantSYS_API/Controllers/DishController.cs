@@ -36,6 +36,14 @@ public class DishController: ControllerBase{
         }
         
     }   
+    [HttpGet("category/{catId:int}")]
+    public async Task<ActionResult<List<DishDTO>>> GetDishesByCategory(int catId){
+        var dishes = await _context.Dishes.Where(d => d.CategoryID == catId).ToListAsync();
+
+        var dishesDTO = _mapper.Map<List<DishDTO>>(dishes);
+
+        return Ok(dishesDTO);
+    }
     //HTTP method to add new dishes to the db
     [HttpPost]
     public async Task<ActionResult> AddDish([FromBody] Dish dish){

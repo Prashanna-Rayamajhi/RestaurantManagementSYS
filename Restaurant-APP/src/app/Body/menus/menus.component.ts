@@ -10,13 +10,15 @@ import { MenuService } from '../../Services/menu.service';
   styleUrl: './menus.component.css'
 })
 export class MenusComponent implements OnInit{
-   menus: Menu[] = [];
-  public sliderView !: SliderVM[];
+  menus: Menu[] = [];
+  sliderView !: SliderVM[];
+  selectedIndex = 0;
   constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
-    this.menus = this.menuService.getMenus();
-    this.sliderView = this.menus.map(({id, name, description, imageUrl}) => ({id, name, description, imageUrl}));
+    this.menuService.getMenus().subscribe({
+      next: menus => this.menus = menus,
+    })    
   }
   navBtnClicked(id: number){
     this.menuService.menuSelectionChanged(id);

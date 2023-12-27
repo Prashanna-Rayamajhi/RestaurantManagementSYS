@@ -5,7 +5,7 @@ export interface Menu{
     name: string,
     description: string,
     type:string,
-    imageUrl: string,
+    image: string,
     availability: boolean,
     validityPeriod: boolean | null,
     priceRange: string,

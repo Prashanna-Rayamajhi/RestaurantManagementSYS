@@ -20,10 +20,14 @@ export class DishesComponent implements OnInit {
   constructor(private dishesService: DishesService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.categories = this.categoryService.getCategories();
-    this.dishes = this.dishesService.getAllDishes();
+    this.dishesService.getAllDishes().subscribe({
+      next: dishes => this.dishes = dishes
+    });
+    this.categoryService.getCategories().subscribe(category =>{
+      this.categories = [{id: 0, name: "All"}, ...category]
+    })
   }
   categorySelected(_id: number){
-    this.dishes = this.dishesService.getDishesByCategory(_id);
+    this.dishesService.getDishesByCategory(_id).subscribe(dishes => this.dishes = dishes);
   }
 }

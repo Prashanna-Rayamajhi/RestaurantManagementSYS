@@ -10,6 +10,9 @@ public class AutoMapperProfile : Profile{
 
         CreateMap<MenuDish, MenuDishDTO>()
         .ReverseMap();
+
+        CreateMap<Category, CategoryDTO>()
+        .ReverseMap();
     }
     private List<MenuDTO> MapDishesMenuDTO(Dish dish, DishDTO dishDTO){
         var result  = new List<MenuDTO>();
