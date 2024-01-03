@@ -1,26 +1,26 @@
-<div class="ml-[auto] mr-[auto] w-[80%] flex flex-col">
+<div class="ml-[auto] mr-[auto] w-[80%] flex flex-col mobile:w-[99%] tablet:w-[90%]">
     <div class="w-[100%] h-[30vh] hero-img bg-[#362417] mt-3 bg-blend-overlay flex justify-center items-center p-4">
         <h2 class="font-[800] text-3xl text-[#fffbff] text-center">Exquisite Dishes</h2>
     </div>
     <div class="mt-[2rem]">
-        <ul class="flex justify-around items-center space-x-7 w-[100%]">
-           <li *ngFor="let category of categories" class="text-[#04030f] font-[500] text-lg transition-colors ease-out cursor-pointer hover:text-[#fff]">
-            <button (click)="categorySelected(category.id)">
+        <ul class="flex justify-around items-center space-x-7 w-[100%] mobile:space-x-4 tablet:space-x-4 mobile:text-[14px] tablet:text-[16px] mb-dish-tab">
+           <li *ngFor="let category of categories" class="text-[#04030f] font-[500] text-lg cursor-pointer mobile:font-[300] tablet:font-[300] mobile:text-[14px]" [ngClass]="{'active': category.id == tabSelectedID}">
+            <button class="p-2 mobile:p-0" (click)="categorySelected(category.id)">
                 {{category.name}}
             </button> 
            </li>
         </ul>
     </div>
-    <div class="grid grid-cols-4 mt-[2rem] gap-[12px]">
-        <div *ngFor="let dish of dishes" class="flex flex-col justify-start text-center shadow-xl bg-[#f1dabf] h-[75vh]">
-            <img [src]="dish.imageURL" [alt]="dish.name"  class="w-[100%] h-[320px]"/>
-            <div class="h-[35%] p-2 text-[#362417] flex flex-col justify-around">
-                <h4 class="font-[500] text-lg">{{dish.name}}</h4>
-                <div>{{dish.description}}</div>
+    <div class="grid grid-cols-4 mt-[2rem] gap-[12px] mobile:grid-cols-1 tablet:grid-cols-2 tablet:gap-[8px]">
+        <div *ngFor="let dish of dishes" class="flex flex-col justify-start text-center shadow-xl bg-[#f1dabf] h-[100%] mobile:h-[72vh] tablet:h-[100%]">
+            <img [src]="dish.imageURL" [alt]="dish.name"  class="w-[100%] h-[320px] mobile:h-[240px] tablet:h-[260px]"/>
+            <div class="h-[45%] p-2 text-[#362417] flex flex-col justify-start tablet:h-[40%] mobile:h-[35%] mobile:justify-around mobile:overflow-y-scroll tablet:overflow-y-auto">
+                <h4 class="font-[500] text-lg mobile:text-[16px] tablet:text-[18px]">{{dish.name}}</h4>
+                <div class="mobile:text-[14px] tablet:text-[15px]">{{dish.description}}</div>
                 <div class="font-[500]">${{dish.price}}</div>
             </div>
-            <div class="p-2 bg-[#362417] h-[auto]">
-                <button class="p-2 border-2 border-[#f1dabf] text-[#f1dabf] rounded-md transition-colors ease-out hover:text-[#362417] hover:bg-[#f1dabf]">Add To Cart</button>
+            <div class="p-2 bg-[#362417] h-[auto] mobile:p-1 tablet:p-1 mt-2">
+                <button class="p-2 border-2 border-[#f1dabf] text-[#f1dabf] rounded-md transition-colors ease-out hover:text-[#362417] hover:bg-[#f1dabf] mobile:p-1 mobile:border-1 mobile:text-sm tablet:p-1 tablet:border-1 tablet:text-base">Add To Cart</button>
             </div>
         </div>
     </div>

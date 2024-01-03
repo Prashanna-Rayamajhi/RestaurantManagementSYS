@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IFileManagement, FileManagement>();
 builder.Services.AddDbContext<RestaurantContext>(options => {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -44,6 +46,8 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 
 app.UseRouting();
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

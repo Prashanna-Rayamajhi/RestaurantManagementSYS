@@ -1,14 +1,14 @@
 <div class="bg-cover back-ground flex">
-    <div class="flex flex-col flex-wrap container-def space-y-5 p-2 mt-[10rem] ml-[7rem]">
-        <h1 class="text-5xl font-medium text-[#fffbff]">Our Restaurant</h1>
-        <h4 class="text-base text-[#f1dabf]">Where beautiful aroma of authentic Nepali Cusine meets your taste</h4>
+    <div class="flex flex-col flex-wrap container-def space-y-5 p-2 mt-[10rem] ml-[7rem] mobile:ml-[0.5rem] mobile:mt-[4rem] mobile:space-y-3 tablet:mt-[3rem] tablet:ml-[1rem]">
+        <h1 class="text-5xl font-medium text-[#fffbff] mobile:text-3xl tablet:text-4xl">Our Restaurant</h1>
+        <h4 class="text-base text-[#f1dabf] mobile:text-sm tablet:text-base">Where beautiful aroma of authentic Nepali Cusine meets your taste</h4>
         <div>
-            <button class="text-xl bg-[#362417] text-[#fffbff] rounded-md p-2 transition-colors hover:bg-[#92817a] mr-3 outline-0 border-0">Order Now</button>
-            <button class="text-[#fffbff] text-base transition-colors hover:text-[#92817a]">View Menu</button>
+            <button class="text-xl bg-[#362417] text-[#fffbff] rounded-md p-2 transition-colors hover:bg-[#92817a] mr-3 outline-0 border-0 mobile:text-sm mobile:p-2 tablet:text-base">Order Now</button>
+            <button class="text-[#fffbff] text-base transition-colors hover:text-[#92817a] mobile:text-sm mobile:font-[800] tablet:text-base tablet:font-[800]">View Menu</button>
         </div>
     </div>
 </div>
 <div class="mt-6">
-    <h2 class="text-center text-3xl text-[700] header-line">Top Menu</h2>
+    <h2 class="text-center text-3xl text-[700] header-line mobile:text-xl tablet:text-2xl">Top Menu</h2>
     <app-menu [menuModel]="menuModel"></app-menu>
 </div>

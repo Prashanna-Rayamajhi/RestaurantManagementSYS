@@ -1,9 +1,17 @@
-<nav class="flex bg-[#04030f] justify-between items-center h-[65px] pl-4 pr-4">
-    <div class="ml-[auto] mr-[auto]">
+<nav class="flex bg-[#04030f] w-[100vw] justify-between items-center h-[65px] pl-4 pr-4 laptop:w-[100vw] mobile:fixed tablet:fixed">
+    <div class="ml-[auto] mr-[auto] tablet:ml-[1rem] mobile:ml-[1rem]">
         <a href=""> <img  class="w-[60px] h-[60px] bg-[transparent]" src="../../../assets/Images/mainlogo.png" alt="logo" /> </a>
         <!-- position for the image -->
     </div>
-    <ul class="flex flex-initial w-[70%] justify-start space-x-14">
+    
+    <div class ="cursor-pointer relative w-[35px] h-[35px] font-[#fff] hidden tablet:block mobile:block mobile: w-[30px] mobile: h-[30px]">
+        <label class="hamburger-menu">
+            <input type="checkbox" (click)="chkBoxChecked()" />
+        </label>
+        
+        
+    </div>
+    <ul class="flex flex-initial w-[70%] justify-start space-x-14 laptop: w-[60%] laptop: text-base" [ngClass]="{'open': isChecked}">
         <li class="nav-items">
            <a href="" class="">Home</a>
         </li>

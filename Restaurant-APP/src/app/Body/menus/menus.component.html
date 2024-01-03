@@ -1,15 +1,15 @@
-<div class="w-[85vw] h-[70vh] ml-[auto] mr-[auto]">
+<div class="w-[85vw] h-[70vh] ml-[auto] mr-[auto] mobile:w-[95vw] tablet:w-[98vw]">
     <app-image-slider></app-image-slider>
-    <div class="flex flex-col mt-[2rem] space-y-14">
-        <h3 class="text-4xl font-[600] text-[#362417] text-center">Delicious Options</h3>
-        <div class="text-lg font-[300] text-[#04030f] text-center line-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis unde nisi, ipsam aliquam obcaecati error. Aut consequuntur voluptatibus, modi quibusdam, culpa eligendi blanditiis dolore hic ducimus facere neque explicabo officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet eum similique fugiat eius animi quaerat quis odio laboriosam autem, blanditiis ullam nisi! Natus reprehenderit eveniet quas? Officia sunt ea dolor.</div>
+    <div class="flex flex-col mt-[2rem] space-y-14 mobile:mt-[1rem] tablet:mt-[1rem] mobile:space-y-7 tablet:space-y-7">
+        <h3 class="text-4xl font-[600] text-[#362417] text-center mobile:text-2xl tablet:text-2xl">Delicious Options</h3>
+        <div class="text-lg font-[300] text-[#04030f] text-center line-section mobile:text-sm tablet:text-[14px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis unde nisi, ipsam aliquam obcaecati error. Aut consequuntur voluptatibus, modi quibusdam, culpa eligendi blanditiis dolore hic ducimus facere neque explicabo officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet eum similique fugiat eius animi quaerat quis odio laboriosam autem, blanditiis ullam nisi! Natus reprehenderit eveniet quas? Officia sunt ea dolor.</div>
 
-        <div class="w-[100%] mt-12">
-            <ul class="flex justify-around mt-12">
-                <li *ngFor="let menu of menus">
-                    <button (click)="navBtnClicked(menu.id)">
+        <div class="w-[100%] mt-12 mobile:mt-3 tablet:mt-3">
+            <ul class="flex justify-around mt-12 space-x-1 mobile:mt-4 tablet:mt-4 mobile:text-[12px] tablet:text-[14px] mb-tab-bar">
+                <li *ngFor="let menu of menus" [id]="menu.id" [ngClass]="{'active':  menu.id === btnTabSelectedMenuID}">
+                    <button (click)="navBtnClicked(menu.id)" >
                         <!-- <img [src]="menu.icon" [alt]="menu.name" class="w-[90px] h-[90px] border-2 p-3 shadow-none border-[#342417] rounded-full bg-[transparent] text-[#f1dabf] transition-[box-shadow] ease hover:shadow-2xl transition-colors ease hover:bg-[#b17b4e]"/> -->
-                        <div class="text-center m-2">{{menu.name}}</div>
+                        <div class="text-center m-2 mobile:m-0 tablet:m-0">{{menu.name}}</div>
                     </button>
                     
                 </li>

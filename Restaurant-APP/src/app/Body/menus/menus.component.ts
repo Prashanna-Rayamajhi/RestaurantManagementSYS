@@ -13,6 +13,7 @@ export class MenusComponent implements OnInit{
   menus: Menu[] = [];
   sliderView !: SliderVM[];
   selectedIndex = 0;
+  btnTabSelectedMenuID: number = 1;
   constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class MenusComponent implements OnInit{
     })    
   }
   navBtnClicked(id: number){
+    this.btnTabSelectedMenuID = id;
     this.menuService.menuSelectionChanged(id);
   }
 

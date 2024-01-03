@@ -13,6 +13,7 @@ export class DishesComponent implements OnInit {
 
    dishes !: Dish[]
   categories !: Category[];
+  tabSelectedID: number = 0;
 
   /**
    *
@@ -28,6 +29,7 @@ export class DishesComponent implements OnInit {
     })
   }
   categorySelected(_id: number){
+    this.tabSelectedID = _id;
     this.dishesService.getDishesByCategory(_id).subscribe(dishes => this.dishes = dishes);
   }
 }

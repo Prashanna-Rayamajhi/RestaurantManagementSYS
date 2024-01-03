@@ -5,3 +5,41 @@
     background-size: cover;
     background-position: 0px 18%;
 }
+@media screen and (max-width: 800px) {
+    .mb-dish-tab{
+        border-radius: 12px;
+        width: 100%;
+        padding: 6px;
+        padding-left: 12px;
+        overflow-x: scroll;
+        box-shadow: 0 0 2px #362417;
+    }
+    .mb-dish-tab li{
+        border-radius: 4px;
+        padding: 4px 0px 4px 0px;
+        transition: all 500ms ease;
+    }
+    .mb-dish-tab li.active{
+        background-color: #362417;
+        color: #f1dabf;
+    }
+}
+@media screen and (min-width: 801px) {
+    .mb-dish-tab li{
+        position: relative;
+    }
+    .mb-dish-tab li::after{
+        content: " ";
+        height: 3px;
+        width: 0%;
+        background-color: #362417;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0, 2.1rem);
+        transition: width 400ms ease;
+    }
+    .mb-dish-tab li.active::after{
+        width: 100%;
+    }
+}

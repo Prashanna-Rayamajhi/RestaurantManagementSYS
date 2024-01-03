@@ -1,10 +1,10 @@
-<div class="w-[100%] h-[100%] slider-container">
+<div class="w-[100%] h-[100%] mt-[15px]">
     <div *ngFor = "let slider of  sliderModel; let i = index"
-    class="flex justify-center items-center w-[100%] h-[100%] bg-[#362417] bg-cover bg-center bg-no-repeat bg-blend-overlay img-container" [style.opacity]="i === currentIndex ? 1 : 0 " style="background-image: url('{{currentImageLoaded.image}}');">
-        <div class="flex flex-col justify-center items-center space-y-7">
-            <h2 class="text-6xl text-[#f1dabf] font-[700] text-justify py-2">{{currentImageLoaded.name}}</h2>
-            <h4 class="text-md text-[#f1dabf] font-[400] text-center px-4 w-[60%]">{{currentImageLoaded.description}}</h4>
-            <button (click)="navClick()" id="{{currentImageLoaded.id}}" class="text-[#f1dabf] text-base font-[300] border-2 p-3"> Explore {{currentImageLoaded.name}} </button>
+    class="flex justify-center items-center w-[100%] h-[100%] bg-[#362417] bg-cover bg-center bg-no-repeat bg-blend-overlay img-container" [style.opacity]="i === currentIndex ? 1 : 0 " [style.display]="i === currentIndex ? 'block': 'none'" style="background-image: url('{{currentImageLoaded.image}}');">
+        <div class="flex flex-col justify-center items-center space-y-7 h-[100%]">
+            <h2 class="text-6xl text-[#f1dabf] font-[700] text-justify py-2 mobile:text-3xl tablet:text-3xl">{{currentImageLoaded.name}}</h2>
+            <h4 class="text-md text-[#f1dabf] font-[400] text-center px-4 w-[60%]mobile:text-sm tablet:text-sm">{{currentImageLoaded.description}}</h4>
+            <!-- <button (click)="navClick()" id="{{currentImageLoaded.id}}" class="text-[#f1dabf] text-base font-[300] border-2 p-3 mobile:p-1 mobile:text-sm tablet:p-1 tablet:text-sm"> Explore {{currentImageLoaded.name}} </button> -->
         </div>
         
     </div>

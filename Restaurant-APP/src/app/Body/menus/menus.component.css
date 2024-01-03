@@ -1,13 +1,59 @@
-.line-section{
-    position: relative;
+
+@media screen and (min-width:1200px) {
+    .line-section{
+        position: relative;
+    }
+    .line-section::after{
+        position: absolute;
+        content: " ";
+        width: 40%;
+        height: 3px;
+        background: linear-gradient(to right, #f1dabf, #362417, #f1dabf);
+        top: 0;
+        left: 31%;
+        transform: translate(0, 9rem);
+    }
 }
-.line-section::after{
-    position: absolute;
-    content: " ";
-    width: 40%;
-    height: 3px;
-    background: linear-gradient(to right, #f1dabf, #362417, #f1dabf);
-    top: 0;
-    left: 31%;
-    transform: translate(0, 9rem);
+
+@media screen and (max-width: 800px){
+    .mb-tab-bar{
+        overflow-x: scroll;
+        text-align: center;
+        padding: 5px;
+        padding-left: 10px;
+        color: #362417;
+        box-shadow: 0px 0 4px #362417;
+        border-radius: 12px;
+        transition: background-color 400ms ease;
+        transition: color 400ms ease;
+    }
+    .mb-tab-bar li{
+
+        border-radius: 10px;
+        padding: 4px;
+    }
+    .mb-tab-bar li.active{
+        background-color: #362417;
+        color: #f1dabf;
+    }
+
+}
+@media screen and (min-width: 800px) {
+    .mb-tab-bar li{
+        position: relative;
+    }
+    .mb-tab-bar li::after{
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #362417;
+        transform: translate(0, 2.5rem);
+        transition: width 500ms ease;
+    }
+    .mb-tab-bar li.active::after{
+        width: 100%;
+    }
 }

@@ -8,23 +8,31 @@
 .container-def{
     max-width: 560px;
 }
-.header-line{
-    position: relative;
+
+@media screen and (max-width: 768px) {
+    .container-def{
+        min-width: 300px;
+    }
 }
-.header-line::before, .header-line::after{
-    position: absolute;
-    content: " ";
-    width: 20%;
-    height: 3px;
-    top: 0;
-}
-.header-line::before{
-    left: 0;
-    background: linear-gradient(to right, #f1dabf, #362417);
-    transform: translate(25rem, 1rem);
-}
-.header-line::after{
-    right: 0;
-    background: linear-gradient(to left, #f1dabf, #362417);
-    transform: translate(-25rem, 1rem);
+@media screen and (min-width: 1000px) {
+    .header-line{
+        position: relative;
+    }
+    .header-line::before, .header-line::after{
+        position: absolute;
+        content: " ";
+        width: 20%;
+        height: 3px;
+        top: 0;
+    }
+    .header-line::before{
+        left: 0;
+        background: linear-gradient(to right, #f1dabf, #362417);
+        transform: translate(25rem, 1rem);
+    }
+    .header-line::after{
+        right: 0;
+        background: linear-gradient(to left, #f1dabf, #362417);
+        transform: translate(-25rem, 1rem);
+    } 
 }

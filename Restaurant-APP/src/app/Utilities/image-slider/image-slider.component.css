@@ -1,11 +1,5 @@
 /* Creating buttons */
-.slider-container{
-    position: relative;
-}
 .img-container{
-    position: absolute;
-    top: 0.75rem;
-    left: 0;
     opacity: 0;
     transition: opacity 1500ms ease-out;
 }

@@ -1,30 +1,30 @@
-<div class="flex justify-around mt-12 items-center w-[72%] h-[100%] ml-[auto] mr-[auto]">
-    <div class="w-[auto] h-[100%]">
-        <img class="h-[350px] w-[450px]" src="{{menuModel.image}}" alt="Image" />
+<div class="flex justify-around mt-12 items-center w-[72%] h-[100%] ml-[auto] mr-[auto] mobile:mt-[2rem] mobile:flex-col mobile:ml-[none] mobile:w-[95%] tablet:w-[100%] laptop:w-[80%] desktop: w-[72%]">
+    <div class="w-[100%] h-[100%] mobile:w-[90%] laptop:w-[65%] desktop: w-[50%]">
+        <img class="h-[350px] w-[450px] mobile:h-[250px] mobile:w-[400px] laptop: w-[500px] desktop:w-[500px]" src="{{menuModel.image}}" alt="Image" />
     </div>
-    <div class="w-[50%] h-[350px] flex flex-col space-y-7 p-2 justify-around">
-        <h3 class="text-3xl text-[500] text-center mt-1">{{menuModel.name}}</h3>
-        <div class="text-base text-[200]">
+    <div class="w-[50%] h-[350px] flex flex-col space-y-7 p-2 justify-around mobile:mt-0 mobile:w-[100%] mobile:space-y-2 tablet:space-y-4">
+        <h3 class="text-3xl text-[500] text-center mt-1 mobile:text-xl mobile:mt-0 tablet:text-2xl tablet:mt-0">{{menuModel.name}}</h3>
+        <div class="text-base text-[200] mobile:text-sm tablet:text-[14px]">
             {{menuModel.description}}
             
         </div>
-        <div class="text-lg text-[300]">
+        <div class="text-lg text-[300] mobile:text-base tablet:text-[16px]">
             {{menuModel.priceRange}}   
         </div>
         <div>
-            <button class="border-2 p-2 border-[#362417] bg-[#362417] text-[#fffbff]  transition-colors ease  hover:bg-transparent hover:text-[#362417] ">Explore Dishes</button>
+            <button class="border-2 p-2 border-[#362417] bg-[#362417] text-[#fffbff]  transition-colors ease  hover:bg-transparent hover:text-[#362417] mobile: border-0 mobile:p-1 mobile:text-sm tablet:p-1 tablet:text-sm">Explore Dishes</button>
         </div>
-        <div class="flex items-center space-x-7">
+        <div class="flex items-center space-x-7 mobile:space-x-3 mobile:text-sm tablet:text-sm">
             <div class=" text-center">
-                <i class="fa-solid fa-martini-glass-citrus text-3xl text-[#362417]"></i>
+                <i class="fa-solid fa-martini-glass-citrus text-3xl text-[#362417] mobile:text-xl tablet:text-xl"></i>
                 <p>Food and Drinks</p>
             </div>
             <div class=" text-center">
-                <i class="fa-solid fa-bowl-food text-3xl text-[#362417]"></i>
+                <i class="fa-solid fa-bowl-food text-3xl text-[#362417] mobile:text-xl tablet:text-xl"></i>
                 <p>Quality Food</p>
             </div>
             <div class=" text-center">
-                <i class="fa-solid fa-ranking-star text-3xl text-[#362417]"></i>
+                <i class="fa-solid fa-ranking-star text-3xl text-[#362417] mobile:text-xl tablet:text-xl"></i>
                 <p>Hospitality</p>
             </div>
         </div>
@@ -32,9 +32,9 @@
 </div>
 <!-- div bleow will be created as next component as we move further ahead -->
 <!--  the div will display top 3 dishes associated with the menu -->
-<div class="bg-[#362417] mt-12 pt-4">
-    <h2 class="text-center text-[#fffbff] text-[500] text-2xl">Top Dishes</h2>
-    <div class="grid grid-cols-3 gap-3 justify-items-center content-center mt-12 min-h-[75vh] w-[100%] pl-4 pr-4  pb-1">
+<div class="bg-[#362417] mt-12 pt-4 mobile:mt-6 mobile:pt-2">
+    <h2 class="text-center text-[#fffbff] text-[500] text-2xl mobile:text-xl">Top Dishes</h2>
+    <div class="grid gap-2 justify-items-center content-center mt-8 min-h-[75vh] w-[100%] pl-4 pr-4 pb-1 mobile:mt-6 mobile:min-h-[60vh] mobile:grid-rows-3 mobile:pl-1 mobile:pr-1 tablet:grid-cols-3 tablet:p-2 tablet:mt-4 desktop:grid-cols-3 laptop:grid-cols-3">
         <div class=""  *ngFor="let dish of menuModel.dishes; let i = index">
             <app-dish [dishModel]="dish"></app-dish>                 
         </div>        

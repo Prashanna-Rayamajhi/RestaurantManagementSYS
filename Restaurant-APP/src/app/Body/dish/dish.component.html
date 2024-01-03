@@ -1,12 +1,12 @@
-<div class="flex flex-col items-center justify-around w-[25vw] min-h-[75vh] bg-[#f1dabf]">
-    <div class="w-[100%] pl-6 pr-6">
-        <img class="w-[100%] h-[300px]" [src]="dishModel.imageURL" [alt]="dishModel.name" />
+<div class="flex flex-col items-center justify-around w-[27vw] min-h-[75vh] bg-[#f1dabf] mobile:w-[90vw] mobile:min-h-[60vh] tablet:w-[32vw] tablet: min-h-[90vh]">
+    <div class="w-[100%] pl-6 pr-6 mobile:p-2 tablet:p-2">
+        <img class="w-[100%] h-[300px] mobile:h-[200px] tablet:h-[280px]" [src]="dishModel.imageURL" [alt]="dishModel.name" />
     </div>
-    <h4 class="text-xl text-[#362417] text-center text-[400]">{{dishModel.name}}</h4>
-    <div class="text-base text-center text-[200] w-[70%]">
+    <h4 class="text-xl text-[#362417] text-center text-[400] mobile:text-base tablet:text-[16px]">{{dishModel.name}}</h4>
+    <div class="text-base text-center text-[200] w-[70%] mobile:text-sm tablet:text-[12px]">
         {{dishModel.description}}
     </div>
     <div class="text-center">
-        <button class="border-2 p-2 rounded-md border-[#362417] transition-colors ease hover:bg-[#362417] hover:text-[#f1dabf]">View More</button>
+        <button class="border-2 p-2 rounded-md border-[#362417] transition-colors ease hover:bg-[#362417] hover:text-[#f1dabf] mobile:border-1 mobile:p-1 mobile:text-sm tablet:border-1 tablet:p-1 tablet:text-sm">View More</button>
     </div>
 </div>
