@@ -1,0 +1,14 @@
+button {
+    transition: all 500ms ease-out;
+}
+
+button:hover {
+    background-color: #362417;
+    color: #f1dabf;
+}
+
+img {
+    margin:0 auto;
+    width: 200px;
+    max-height: 150px;
+}

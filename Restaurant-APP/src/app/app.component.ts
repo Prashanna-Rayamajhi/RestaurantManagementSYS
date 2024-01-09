@@ -7,6 +7,7 @@ import { NavbarComponent } from './Header/navbar/navbar.component';
 import { MenuModule } from './Body/menus/menu.module';
 import { DishesModule } from './Body/dishes/dishes.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './Admin/admin.module';
 
 
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
               MenuModule,
               NavbarComponent,
               DishesModule,
+              AdminModule,
               HttpClientModule
             ],
   templateUrl: './app.component.html',

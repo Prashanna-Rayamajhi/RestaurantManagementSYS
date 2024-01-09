@@ -100,7 +100,7 @@
     text-align: center;
   }
   nav ul.open{
-    clip-path: circle(1000px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
+    clip-path: circle(1250px at 90% -10%);
+    -webkit-clip-path: circle(1250px at 90% -10%);
   }
 }

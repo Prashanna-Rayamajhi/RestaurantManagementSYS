@@ -1,0 +1,45 @@
+<div class="w-[90%] h-[80%] mt-[2rem] relative">
+    <div class="w-[100%] h-[100vh] bg-[#362417] absolute left-0 top-0 rounded-xl rotate-[-7deg] laptop:h-[70vh] desktop:h-[70vh]">
+    </div>
+    <div>
+        <button type="button" class="p-2 w-[40px] text-[#f1dabf] bg-[#F44336] absolute top-[.9rem] right-[-.2rem] rounded-[90%] font-[500]" (click)="formCanceled.emit()">X</button>
+    </div>
+    <div class="w-[100%] h-[95vh] laptop:h-[65vh] desktop:h-[65vh] ml-[auto] mr-[auto] mt-[2 rem] bg-[#fffbff] rounded-xl p-4 absolute left-0 top-4">
+        <h3 class="text-center text-xl">Create New Dish</h3>
+        <form [formGroup] = "dishForm" class="w-[100%] space-y-3 laptop:space-y-0 desktop:space-y-0 laptop:flex desktop:flex">
+            <div class="laptop:w-[50%] desktop:w-[50%] p-2">
+                <div class="w-[100%] flex flex-col justify-start ">
+                    <label for="dishName">Name</label>
+                    <input type="text" id="dishName" formControlName="name" class="p-2 border-b-2 border-[#92817a] bg-[transparent]"/>
+                </div>
+                <div class="w-[100%] flex flex-col justify-start">
+                    <label for="dishIngredients">Ingredients</label>
+                    <input type="text" id="dishIngredients" formControlName="ingredients" class="p-2 border-b-2 border-[#92817a] bg-[transparent]"/>
+                </div>
+                <div class="w-[100%] flex flex-col justify-start">
+                    <label for="dishPrice">Price</label>
+                    <input type="number" id="dishPrice" formControlName="name" class="p-2 border-b-2 border-[#92817a] bg-[transparent]"/>
+                </div>
+                <div class="w-[100%] flex flex-col justify-start">
+                    <label for="dishDescription">Description</label>
+                    <textarea type="text" id="dishDescription" formControlName="description" rows="6" class="p-2 border-2 border-[#92817a] bg-[transparent]"> </textarea>
+                </div>
+            </div>
+            <div class="laptop:w-[50%] desktop:w-[50%] p-2">
+                <div class="w-[100%] flex flex-col justify-start">
+                    <label for="dishImage">Image</label>
+                    <!-- <input type="file" id="dishImage" formControlName="imageURL" class="p-2 bg-[transparent]"/> -->
+                    <app-input-image></app-input-image>
+                </div>
+                <div class="w-[100%] flex flex-col justify-start">
+                    <label for="dishCategory">Category</label>
+                    <input type="text" id="dishCategory" formControlName="category" class="p-2 border-b-2 border-[#92817a] bg-[transparent]"/>
+                </div>
+                <div class="w-[100%] mt-[2rem] flex justify-start space-x-5">
+                    <input type="submit" value="Submit" class="w-[50%] p-2 text-base bg-[#362417] text-[#f1dabf] cursor-pointer"/>
+                    <input type="button" value="Cancel" class="w-[50%] p-2 text-base bg-[#92817a] text-[#f1dabf] cursor-pointer" (click)="formCanceled.emit()"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

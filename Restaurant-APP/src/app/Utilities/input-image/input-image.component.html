@@ -1,0 +1,11 @@
+<div class="imageContainer">
+    <div *ngIf="imageToBase64">
+        <img [src]="imageToBase64" />
+    </div>
+    <div *ngIf="currentImageURL">
+        <img [src]="currentImageURL" />
+    </div>
+</div>
+
+<button  class="rounded-md border-2 border-[#362417] w-[100%] p-1 text-[#000] font-[400] text-[16px]" (click)="inputImage.click()"><i class="fa-solid fa-cloud-arrow-up text-2xl"></i></button>
+<input type="file" id="formFile" #inputImage accept="image/jpeg, image/png" hidden (change)="onChange($event)"/>

@@ -1,31 +1,57 @@
-<nav class="flex bg-[#04030f] w-[100vw] justify-between items-center h-[65px] pl-4 pr-4 laptop:w-[100vw] mobile:fixed tablet:fixed">
+<nav
+    class="flex bg-[#04030f] w-[100vw] justify-between items-center h-[65px] pl-4 pr-4 laptop:w-[100vw] mobile:fixed tablet:fixed">
     <div class="ml-[auto] mr-[auto] tablet:ml-[1rem] mobile:ml-[1rem]">
-        <a href=""> <img  class="w-[60px] h-[60px] bg-[transparent]" src="../../../assets/Images/mainlogo.png" alt="logo" /> </a>
+        <a href=""> <img class="w-[60px] h-[60px] bg-[transparent]" src="../../../assets/Images/mainlogo.png"
+                alt="logo" /> </a>
         <!-- position for the image -->
     </div>
-    
-    <div class ="cursor-pointer relative w-[35px] h-[35px] font-[#fff] hidden tablet:block mobile:block mobile: w-[30px] mobile: h-[30px]">
+
+    <div
+        class="cursor-pointer relative w-[35px] h-[35px] font-[#fff] hidden tablet:block mobile:block mobile: w-[30px] mobile: h-[30px]">
         <label class="hamburger-menu">
             <input type="checkbox" (click)="chkBoxChecked()" />
         </label>
-        
-        
+
+
     </div>
-    <ul class="flex flex-initial w-[70%] justify-start space-x-14 laptop: w-[60%] laptop: text-base" [ngClass]="{'open': isChecked}">
+    <app-authorize class="w-[70%]">
+        <ng-container authorized>
+        <ul class="flex flex-initial w-[100%] justify-start space-x-14 laptop: w-[60%] laptop: text-base">
+            <li class="nav-items">
+                <a href="dashboard">Dashboard</a>
+            </li>
+            <li class="nav-items">
+                <a href= "index-menu">Menu</a>
+            </li>
+            <li class="nav-items">
+                <a href= "index-dish">Dishes</a>
+            </li>
+            <li class="nav-items">
+                <a href= "index-order">Order Management</a>
+            </li>
+        </ul>
+        </ng-container>
+        <ng-container notauthorized>
+        <ul class="flex flex-initial w-[100%] justify-start space-x-14 laptop: w-[60%] laptop: text-base"
+        [ngClass]="{'open': isChecked}">
         <li class="nav-items">
-           <a href="" class="">Home</a>
+            <a href="" class="">Home</a>
         </li>
         <li class="nav-items">
             <a href="menu" class="">Menu</a>
         </li>
         <li class="nav-items">
-            <a  href="dishes" class="">Dishes</a>
+            <a href="dishes" class="">Dishes</a>
         </li>
         <li class="nav-items">
-            <a  href="dishes" class="">About Us</a>
+            <a href="dishes" class="">About Us</a>
         </li>
         <li class="nav-items">
-            <a  href="dishes" class="">Contact</a>
+            <a href="dishes" class="">Contact</a>
         </li>
-    </ul>
+
+        </ul>
+        </ng-container>
+    </app-authorize>
+    
 </nav>
