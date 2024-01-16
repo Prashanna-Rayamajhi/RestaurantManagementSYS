@@ -1,0 +1,6 @@
+<div class="flex flex-wrap space-x-3">
+    <div *ngFor="let chkModel of checkboxModel" class="text-center space-x-2">
+        <label for="{{chkModel.id}}">{{chkModel.name}}</label>
+        <input class="cursor-pointer w-5 h-5 border-2 checked:bg-[#92817a]" type="checkbox" [checked]="chkModel.checked" [value]="chkModel.id" (change)="selectionChanged.emit(chkModel.id)" />
+    </div>
+</div>

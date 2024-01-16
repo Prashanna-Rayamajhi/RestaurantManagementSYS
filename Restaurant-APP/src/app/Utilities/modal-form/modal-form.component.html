@@ -1,3 +1,4 @@
-<div class="w-[50vw] h-[70vh] ml-[auto] mr-[auto]">
-    <app-dish-form (formCanceled)="canceled.emit()"></app-dish-form>
+<div class="w-[60vw] h-[95vh] ml-[auto] mr-[auto]">
+    <app-dish-form *ngIf="formType == 'dishForm'" (formCanceled)="canceled.emit()"></app-dish-form>
+    <app-menu-form *ngIf="formType == 'menuForm'" (formCanceled)="canceled.emit()"></app-menu-form>
 </div>

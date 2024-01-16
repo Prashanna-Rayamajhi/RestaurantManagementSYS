@@ -11,6 +11,7 @@ import { MenuFormComponent } from "./forms/menu-form/menu-form.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ModalFormComponent } from "../Utilities/modal-form/modal-form.component";
 import { InputImageComponent } from "../Utilities/input-image/input-image.component";
+import { CheckboxInputComponent } from "../Utilities/checkbox-input/checkbox-input.component";
 
 @NgModule({
     declarations: [MenuIndexComponent,
@@ -20,7 +21,8 @@ import { InputImageComponent } from "../Utilities/input-image/input-image.compon
                     ModalFormComponent,
                     DishFormComponent,
                     MenuFormComponent,
-                    InputImageComponent],
+                    InputImageComponent,
+                    CheckboxInputComponent],
     providers: [MenuService, DishesService],
     imports:[CommonModule, ReactiveFormsModule],
     exports: [MenuIndexComponent,
@@ -30,6 +32,7 @@ import { InputImageComponent } from "../Utilities/input-image/input-image.compon
                 DishFormComponent,
                 ModalFormComponent,
                 MenuFormComponent,
-                InputImageComponent]
+                InputImageComponent,
+                CheckboxInputComponent]
 })
 export class AdminModule{}

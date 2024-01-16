@@ -1,0 +1,12 @@
+.modal{
+    padding: 12px;
+    height: 200vh;
+    width: 100vw;
+    background-color: transparent;
+    display: none;
+    transition: background-color 500ms ease;
+}
+.modal.show{
+    background-color: rgba(0, 0, 0, 0.9);
+    display: block;
+}

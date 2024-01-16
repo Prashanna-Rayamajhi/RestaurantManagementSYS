@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormType } from '../../ViewModel/form.enum';
 
 @Component({
   selector: 'app-modal-form',
@@ -7,4 +8,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ModalFormComponent {
   @Output() canceled: EventEmitter<void> = new EventEmitter<void>();
+  @Input() formType !: string;
 }
